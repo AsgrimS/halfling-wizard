@@ -1,20 +1,45 @@
 import React from "react";
 
-import { useQuery, gql } from "@apollo/client";
+import { useQuery, useLazyQuery, gql } from "@apollo/client";
 import styled from "styled-components";
 
-import { HeroClassesData } from "../../graphql/interfaces";
+import { Class } from "../../graphql/types";
+
+interface HeroClassesData {
+  classes: Class[];
+}
+
+interface HeroClassData {
+  class: Class;
+}
 
 const HEROES_CLASSES = gql`
   query GetHeroesClasses {
     classes {
       name
+      index
+    }
+  }
+`;
+
+const HERO_CLASS = gql`
+  query GetHeroesClasses($classIndex: String!) {
+    class(filter: { name: $classIndex }) {
+      name
+      hit_die
+      proficiencies {
+        name
+        index
+      }
     }
   }
 `;
 
 const Explorer: React.FC = () => {
-  const { loading, data } = useQuery<HeroClassesData>(HEROES_CLASSES);
+  const heroClassesData = useQuery<HeroClassesData>(HEROES_CLASSES);
+  const [getClassDetail, heroClassData] = useLazyQuery<HeroClassData>(
+    HERO_CLASS
+  );
 
   return (
     <Layout>
@@ -22,15 +47,41 @@ const Explorer: React.FC = () => {
       <Content>
         <span>Classes</span>
         <ul>
-          {loading ? (
+          {heroClassesData.loading ? (
             <h2>Loading..</h2>
           ) : (
             <>
-              {data &&
-                data.classes.map((heroClass) => <li>{heroClass.name}</li>)}
+              {heroClassesData.data &&
+                heroClassesData.data.classes.map((heroClass) => (
+                  <div key={heroClass.index}>
+                    <li>{heroClass.name}</li>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        getClassDetail({
+                          variables: { classIndex: heroClass.name },
+                        })
+                      }
+                    >
+                      Expand
+                    </button>
+                  </div>
+                ))}
             </>
           )}
         </ul>
+        {heroClassData.data && (
+          <div>
+            <p>{heroClassData.data.class.name}</p>
+            <p>{heroClassData.data.class.hit_die}</p>
+            <p>Proficiencies:</p>
+            <ul>
+              {heroClassData.data.class.proficiencies?.map((proficiency) => (
+                <li key={proficiency?.index}>{proficiency?.name}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </Content>
     </Layout>
   );

@@ -1,22 +1,17 @@
 import React from "react";
 
 import styled from "styled-components";
-import { QueryClient, QueryClientProvider } from "react-query";
 
 import GlobalStyle from "./globalStyles";
 import Explorer from "./pages/explorer/Explorer";
 
 const App: React.FC = () => {
-  const queryClient = new QueryClient();
-
   return (
     <>
       <GlobalStyle />
-      <QueryClientProvider client={queryClient}>
-        <Content>
-          <Explorer />
-        </Content>
-      </QueryClientProvider>
+      <Content>
+        <Explorer />
+      </Content>
     </>
   );
 };

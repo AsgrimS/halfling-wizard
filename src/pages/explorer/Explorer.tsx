@@ -1,17 +1,20 @@
 import React from "react";
 
+import { useQuery, gql } from "@apollo/client";
 import styled from "styled-components";
-import { useQuery } from "react-query";
 
-import ApiUrls from "../../api/urls";
-import { Hero } from "../../api/interfaces";
+import { HeroClassesData } from "../../graphql/interfaces";
+
+const HEROES_CLASSES = gql`
+  query GetHeroesClasses {
+    classes {
+      name
+    }
+  }
+`;
 
 const Explorer: React.FC = () => {
-  const classesData = useQuery("classesData", () =>
-    fetch(`${ApiUrls.baseUrl}/${ApiUrls.classes}`).then((res) => res.json())
-  );
-
-  if (classesData.isLoading) return <h2>Loading..</h2>;
+  const { loading, data } = useQuery<HeroClassesData>(HEROES_CLASSES);
 
   return (
     <Layout>
@@ -19,13 +22,12 @@ const Explorer: React.FC = () => {
       <Content>
         <span>Classes</span>
         <ul>
-          {classesData.isLoading ? (
+          {loading ? (
             <h2>Loading..</h2>
           ) : (
             <>
-              {classesData.data.results.map((heroClass: Hero) => (
-                <li key={heroClass.index}>{heroClass.name}</li>
-              ))}
+              {data &&
+                data.classes.map((heroClass) => <li>{heroClass.name}</li>)}
             </>
           )}
         </ul>

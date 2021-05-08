@@ -26,7 +26,8 @@ module.exports = {
     project: "./tsconfig.json",
   },
   rules: {
-    "linebreak-style": "off",
+    "linebreak-style": "off", // doesn't work with styled-components
+    "react/prop-types": "off", // doesn't work with typescript generics
     "@typescript-eslint/no-use-before-define": "off",
     "prettier/prettier": [
       "error",

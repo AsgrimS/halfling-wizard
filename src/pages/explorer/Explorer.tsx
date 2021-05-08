@@ -1,26 +1,11 @@
 import React from "react";
 
-import { useQuery, useLazyQuery, gql } from "@apollo/client";
 import styled from "styled-components";
+import { useLazyQuery, gql } from "@apollo/client";
 
-import { Class } from "../../graphql/types";
-
-interface HeroClassesData {
-  classes: Class[];
-}
-
-interface HeroClassData {
-  class: Class;
-}
-
-const HEROES_CLASSES = gql`
-  query GetHeroesClasses {
-    classes {
-      name
-      index
-    }
-  }
-`;
+import ClassesList from "../../components/classesList/ClassesList";
+import ClassDetails from "../../components/classDetails/ClassDetails";
+import { HeroClassData } from "../../graphql/interfaces";
 
 const HERO_CLASS = gql`
   query GetHeroesClasses($classIndex: String!) {
@@ -36,52 +21,19 @@ const HERO_CLASS = gql`
 `;
 
 const Explorer: React.FC = () => {
-  const heroClassesData = useQuery<HeroClassesData>(HEROES_CLASSES);
   const [getClassDetail, heroClassData] = useLazyQuery<HeroClassData>(
     HERO_CLASS
   );
-
   return (
     <Layout>
       <Header>Explorer</Header>
       <Content>
-        <span>Classes</span>
-        <ul>
-          {heroClassesData.loading ? (
-            <h2>Loading..</h2>
-          ) : (
-            <>
-              {heroClassesData.data &&
-                heroClassesData.data.classes.map((heroClass) => (
-                  <div key={heroClass.index}>
-                    <li>{heroClass.name}</li>
-                    <button
-                      type="button"
-                      onClick={() =>
-                        getClassDetail({
-                          variables: { classIndex: heroClass.name },
-                        })
-                      }
-                    >
-                      Expand
-                    </button>
-                  </div>
-                ))}
-            </>
+        <PanelLayout>
+          <ClassesList getClassDetail={getClassDetail} />
+          {heroClassData.data && (
+            <ClassDetails class={heroClassData.data.class} />
           )}
-        </ul>
-        {heroClassData.data && (
-          <div>
-            <p>{heroClassData.data.class.name}</p>
-            <p>{heroClassData.data.class.hit_die}</p>
-            <p>Proficiencies:</p>
-            <ul>
-              {heroClassData.data.class.proficiencies?.map((proficiency) => (
-                <li key={proficiency?.index}>{proficiency?.name}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+        </PanelLayout>
       </Content>
     </Layout>
   );
@@ -94,6 +46,12 @@ const Layout = styled.div`
   width: 100%;
   grid-template-columns: auto;
   grid-template-rows: 5rem auto;
+`;
+
+const PanelLayout = styled.div`
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  grid-template-rows: 1;
 `;
 
 const Header = styled.div`

@@ -132,7 +132,7 @@ export type Class = {
   starting_equipment_options?: Maybe<
     Array<Maybe<ClassStarting_Equipment_Options>>
   >;
-  subclasses?: Maybe<Array<Maybe<AbilityScoreSkills>>>;
+  subclasses?: Maybe<Array<Subclass>>;
   url?: Maybe<Scalars["String"]>;
 };
 

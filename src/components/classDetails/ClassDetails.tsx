@@ -3,18 +3,16 @@ import React from "react";
 import styled from "styled-components";
 
 import { HeroClassData } from "../../graphql/interfaces";
+import SubclassesList from "../subclassesList/SubclassesList";
 
-const ClassDetails: React.FC<HeroClassData> = ({ class: HeroClass }) => {
+const ClassDetails: React.FC<HeroClassData> = ({ class: heroClass }) => {
   return (
     <Details>
-      <p>{HeroClass.name}</p>
-      <p>{HeroClass.hit_die}</p>
-      <p>Proficiencies:</p>
-      <ul>
-        {HeroClass.proficiencies?.map((proficiency) => (
-          <li key={proficiency?.index}>{proficiency?.name}</li>
-        ))}
-      </ul>
+      <p>{heroClass.name}</p>
+      <p>{heroClass.hit_die}</p>
+      {heroClass.subclasses && (
+        <SubclassesList subclasses={heroClass.subclasses} />
+      )}
     </Details>
   );
 };

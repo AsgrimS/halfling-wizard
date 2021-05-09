@@ -1,24 +1,12 @@
 import React from "react";
 
 import styled from "styled-components";
-import { useLazyQuery, gql } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 
+import { HERO_CLASS } from "../../graphql/queries";
+import { HeroClassData } from "../../graphql/interfaces";
 import ClassesList from "../../components/classesList/ClassesList";
 import ClassDetails from "../../components/classDetails/ClassDetails";
-import { HeroClassData } from "../../graphql/interfaces";
-
-const HERO_CLASS = gql`
-  query GetHeroesClasses($classIndex: String!) {
-    class(filter: { name: $classIndex }) {
-      name
-      hit_die
-      proficiencies {
-        name
-        index
-      }
-    }
-  }
-`;
 
 const Explorer: React.FC = () => {
   const [getClassDetail, heroClassData] = useLazyQuery<HeroClassData>(
@@ -30,8 +18,12 @@ const Explorer: React.FC = () => {
       <Content>
         <PanelLayout>
           <ClassesList getClassDetail={getClassDetail} />
-          {heroClassData.data && (
+          {heroClassData.called && heroClassData.loading === true && (
+            <h1>loading</h1>
+          )}
+          {heroClassData.loading === false && heroClassData.data && (
             <ClassDetails class={heroClassData.data.class} />
+            // maybe fetch inside compnents
           )}
         </PanelLayout>
       </Content>

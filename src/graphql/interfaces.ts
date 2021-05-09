@@ -1,4 +1,4 @@
-import { Class } from "./schema";
+import { Class, Subclass } from "./schema";
 
 export interface HeroClassesData {
   classes: Class[];
@@ -6,4 +6,8 @@ export interface HeroClassesData {
 
 export interface HeroClassData {
   class: Class;
+}
+
+export interface SubclassesData {
+  subclasses: Subclass[];
 }

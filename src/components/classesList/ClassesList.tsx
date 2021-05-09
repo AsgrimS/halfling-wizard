@@ -1,19 +1,11 @@
 import React from "react";
 
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import styled from "styled-components";
 
+import { HEROES_CLASSES } from "../../graphql/queries";
 import { HeroClassesData } from "../../graphql/interfaces";
 import { LazyQueryCallbackFunction } from "../../utils/interfaces";
-
-const HEROES_CLASSES = gql`
-  query GetHeroesClasses {
-    classes {
-      name
-      index
-    }
-  }
-`;
 
 const ClassesList: React.FC<LazyQueryCallbackFunction> = ({
   getClassDetail,

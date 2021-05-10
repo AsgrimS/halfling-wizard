@@ -123,9 +123,9 @@ export type Class = {
   hit_die?: Maybe<Scalars["Float"]>;
   index?: Maybe<Scalars["String"]>;
   name?: Maybe<Scalars["String"]>;
-  proficiencies?: Maybe<Array<Maybe<AbilityScoreSkills>>>;
+  proficiencies?: Maybe<Array<Proficiency>>;
   proficiency_choices?: Maybe<Array<Maybe<ClassProficiency_Choices>>>;
-  saving_throws?: Maybe<Array<Maybe<AbilityScoreSkills>>>;
+  saving_throws?: Maybe<Array<AbilityScoreSkills>>;
   spellcasting?: Maybe<ClassSpellcasting>;
   spells?: Maybe<Scalars["String"]>;
   starting_equipment?: Maybe<Array<Maybe<ClassStarting_Equipment>>>;

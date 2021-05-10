@@ -6,6 +6,8 @@ import styled from "styled-components";
 import { HEROES_CLASSES } from "../../graphql/queries";
 import { HeroClassesData } from "../../graphql/interfaces";
 import { LazyQueryCallbackFunction } from "../../utils/interfaces";
+import ExpandBtn from "../../styled-components/ExpandBtn";
+import LoadingAnimation from "../../styled-components/LoadingAnimation";
 
 const ClassesList: React.FC<LazyQueryCallbackFunction> = ({
   getClassDetail,
@@ -17,14 +19,14 @@ const ClassesList: React.FC<LazyQueryCallbackFunction> = ({
       <span>Classes</span>
       <List>
         {heroClassesData.loading ? (
-          <h2>Loading..</h2>
+          <LoadingAnimation />
         ) : (
           <>
             {heroClassesData.data &&
               heroClassesData.data.classes.map((heroClass) => (
-                <div key={heroClass.index}>
+                <ClassElement key={heroClass.index}>
                   <li>{heroClass.name}</li>
-                  <button
+                  <ExpandBtn
                     type="button"
                     onClick={() =>
                       getClassDetail({
@@ -33,8 +35,8 @@ const ClassesList: React.FC<LazyQueryCallbackFunction> = ({
                     }
                   >
                     Expand
-                  </button>
-                </div>
+                  </ExpandBtn>
+                </ClassElement>
               ))}
           </>
         )}
@@ -48,4 +50,8 @@ export default ClassesList;
 const List = styled.ul`
   grid-column-start: 1;
   grid-column-end: 1;
+`;
+
+const ClassElement = styled.div`
+  margin-bottom: 0.1rem;
 `;

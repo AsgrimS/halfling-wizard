@@ -7,6 +7,7 @@ import { HERO_CLASS } from "../../graphql/queries";
 import { HeroClassData } from "../../graphql/interfaces";
 import ClassesList from "../../components/classesList/ClassesList";
 import ClassDetails from "../../components/classDetails/ClassDetails";
+import LoadingAnimation from "../../styled-components/LoadingAnimation";
 
 const Explorer: React.FC = () => {
   const [getClassDetail, heroClassData] = useLazyQuery<HeroClassData>(
@@ -19,11 +20,10 @@ const Explorer: React.FC = () => {
         <PanelLayout>
           <ClassesList getClassDetail={getClassDetail} />
           {heroClassData.called && heroClassData.loading === true && (
-            <h1>loading</h1>
+            <LoadingAnimation />
           )}
           {heroClassData.loading === false && heroClassData.data && (
             <ClassDetails class={heroClassData.data.class} />
-            // maybe fetch inside compnents
           )}
         </PanelLayout>
       </Content>
@@ -44,6 +44,8 @@ const PanelLayout = styled.div`
   display: grid;
   grid-template-columns: 3fr 7fr;
   grid-template-rows: 1;
+  justify-items: center;
+  align-items: center;
 `;
 
 const Header = styled.div`

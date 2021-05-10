@@ -1,4 +1,4 @@
-import { Class, Subclass } from "./schema";
+import { Class, Subclass, Proficiency, AbilityScoreSkills } from "./schema";
 
 export interface HeroClassesData {
   classes: Class[];
@@ -10,4 +10,12 @@ export interface HeroClassData {
 
 export interface SubclassesData {
   subclasses: Subclass[];
+}
+
+export interface ProficienciesData {
+  proficiencies: Proficiency[];
+}
+
+export interface SavingThrowsData {
+  saving_throws: AbilityScoreSkills[];
 }

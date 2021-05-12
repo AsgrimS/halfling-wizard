@@ -15,8 +15,8 @@ const ClassesList: React.FC<LazyQueryCallbackFunction> = ({
   const heroClassesData = useQuery<HeroClassesData>(HEROES_CLASSES);
 
   return (
-    <>
-      <span>Classes</span>
+    <ListContainer>
+      <ListTitle>Classes</ListTitle>
       <List>
         {heroClassesData.loading ? (
           <LoadingAnimation />
@@ -24,8 +24,7 @@ const ClassesList: React.FC<LazyQueryCallbackFunction> = ({
           <>
             {heroClassesData.data &&
               heroClassesData.data.classes.map((heroClass) => (
-                <ClassElement key={heroClass.index}>
-                  <li>{heroClass.name}</li>
+                <li>
                   <ExpandBtn
                     type="button"
                     onClick={() =>
@@ -34,24 +33,35 @@ const ClassesList: React.FC<LazyQueryCallbackFunction> = ({
                       })
                     }
                   >
-                    Expand
+                    {heroClass.name}
                   </ExpandBtn>
-                </ClassElement>
+                </li>
               ))}
           </>
         )}
       </List>
-    </>
+    </ListContainer>
   );
 };
 
 export default ClassesList;
 
-const List = styled.ul`
+const ListContainer = styled.div`
+  width: 100%;
   grid-column-start: 1;
   grid-column-end: 1;
+  background-color: var(--blackOliveL);
+  border-radius: 0.5rem;
+  align-self: start;
 `;
 
-const ClassElement = styled.div`
-  margin-bottom: 0.1rem;
+const ListTitle = styled.span`
+  font-family: "PT Sans Bold";
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+`;
+
+const List = styled.ul`
+  padding-left: 1rem;
+  list-style-type: none;
 `;

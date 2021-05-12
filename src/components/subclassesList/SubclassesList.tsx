@@ -3,14 +3,14 @@ import { SubclassesData } from "../../graphql/interfaces";
 
 const SubclassesList: React.FC<SubclassesData> = ({ subclasses }) => {
   return (
-    <>
-      <p>Subclasses:</p>
+    <div>
+      <span>Subclasses:</span>
       <ul>
         {subclasses.map((subclass) => (
           <li key={subclass.index}>{subclass.name}</li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 

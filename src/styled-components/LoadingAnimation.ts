@@ -21,6 +21,9 @@ const LoadingAnimation = styled.div`
   width: 24px;
   height: 24px;
   border-radius: 50%;
+
+  align-self: center;
+  justify-self: center;
 `;
 
 export default LoadingAnimation;

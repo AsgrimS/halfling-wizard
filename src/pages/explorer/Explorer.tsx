@@ -36,16 +36,17 @@ export default Explorer;
 const Layout = styled.div`
   display: grid;
   width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
   grid-template-columns: auto;
   grid-template-rows: 5rem auto;
 `;
 
 const PanelLayout = styled.div`
   display: grid;
-  grid-template-columns: 3fr 7fr;
+  grid-template-columns: 1fr 4fr 5fr;
   grid-template-rows: 1;
-  justify-items: center;
-  align-items: center;
+  column-gap: 1rem;
 `;
 
 const Header = styled.div`

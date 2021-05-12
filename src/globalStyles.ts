@@ -22,13 +22,17 @@ const GlobalStyle = createGlobalStyle`
     font-family: "PT Sans Bold-Italic";
     src: local("PT Sans Bold-Italic"), url(${PTSansBoldItalic}) format("truetype");
   }
-  
+
   *{
     --floralWhite: hsl(46, 100%, 97%);
     --paleSilver: hsl(38, 16%, 76%);
+    --blackOliveL: hsl(34, 6%, 30%);
     --blackOlive: hsl(34, 6%, 24%);
     --eerieBlack: hsl(40, 4%, 14%);
     --flame: hsl(17, 83%, 54%);
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
   }
 
   body {

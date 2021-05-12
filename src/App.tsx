@@ -20,8 +20,7 @@ export default App;
 
 const Content = styled.div`
   display: flex;
-  justify-content: center;
   height: 100vh;
   background-color: var(--blackOlive);
-  margin: 0 15rem 0 15rem;
+  margin: 0 15% 0 15%;
 `;

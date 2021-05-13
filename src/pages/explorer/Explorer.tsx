@@ -35,7 +35,6 @@ export default Explorer;
 
 const Layout = styled.div`
   display: grid;
-  width: 100%;
   padding-right: 1rem;
   padding-left: 1rem;
   grid-template-columns: auto;

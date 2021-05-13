@@ -19,8 +19,10 @@ const App: React.FC = () => {
 export default App;
 
 const Content = styled.div`
-  display: flex;
   height: 100vh;
   background-color: var(--blackOlive);
-  margin: 0 15% 0 15%;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 275px;
+  max-width: 1000px;
 `;

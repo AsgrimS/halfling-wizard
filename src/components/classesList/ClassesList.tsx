@@ -15,38 +15,37 @@ const ClassesList: React.FC<LazyQueryCallbackFunction> = ({
   const heroClassesData = useQuery<HeroClassesData>(HEROES_CLASSES);
 
   return (
-    <ListContainer>
-      <ListTitle>Classes</ListTitle>
-      <List>
-        {heroClassesData.loading ? (
-          <LoadingAnimation />
-        ) : (
-          <>
-            {heroClassesData.data &&
-              heroClassesData.data.classes.map((heroClass) => (
-                <li>
-                  <ExpandBtn
-                    type="button"
-                    onClick={() =>
-                      getClassDetail({
-                        variables: { classIndex: heroClass.name },
-                      })
-                    }
-                  >
-                    {heroClass.name}
-                  </ExpandBtn>
-                </li>
-              ))}
-          </>
-        )}
-      </List>
-    </ListContainer>
+    <TableContainer>
+      <TableTitle>Classes</TableTitle>
+
+      {heroClassesData.loading ? (
+        <LoadingAnimation />
+      ) : (
+        <ClassesTable>
+          {heroClassesData.data &&
+            heroClassesData.data.classes.map((heroClass) => (
+              <tr>
+                <ExpandBtn
+                  type="button"
+                  onClick={() =>
+                    getClassDetail({
+                      variables: { classIndex: heroClass.name },
+                    })
+                  }
+                >
+                  {heroClass.name}
+                </ExpandBtn>
+              </tr>
+            ))}
+        </ClassesTable>
+      )}
+    </TableContainer>
   );
 };
 
 export default ClassesList;
 
-const ListContainer = styled.div`
+const TableContainer = styled.div`
   width: 100%;
   grid-column-start: 1;
   grid-column-end: 1;
@@ -55,13 +54,12 @@ const ListContainer = styled.div`
   align-self: start;
 `;
 
-const ListTitle = styled.span`
+const TableTitle = styled.span`
   font-family: "PT Sans Bold";
   font-size: 1.5rem;
   margin-left: 0.5rem;
 `;
 
-const List = styled.ul`
-  padding-left: 1rem;
-  list-style-type: none;
+const ClassesTable = styled.table`
+  width: 100%;
 `;

@@ -124,7 +124,7 @@ export type Class = {
   index?: Maybe<Scalars["String"]>;
   name?: Maybe<Scalars["String"]>;
   proficiencies?: Maybe<Array<Proficiency>>;
-  proficiency_choices?: Maybe<Array<Maybe<ClassProficiency_Choices>>>;
+  proficiency_choices?: Maybe<Array<ClassProficiency_Choices>>;
   saving_throws?: Maybe<Array<AbilityScoreSkills>>;
   spellcasting?: Maybe<ClassSpellcasting>;
   spells?: Maybe<Scalars["String"]>;
@@ -139,7 +139,7 @@ export type Class = {
 export type ClassProficiency_Choices = {
   __typename?: "ClassProficiency_choices";
   choose?: Maybe<Scalars["Float"]>;
-  from?: Maybe<Array<Maybe<AbilityScoreSkills>>>;
+  from?: Maybe<Array<Proficiency>>;
   type?: Maybe<Scalars["String"]>;
 };
 

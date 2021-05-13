@@ -21,6 +21,13 @@ const ClassDetails: React.FC<HeroClassData> = ({ class: heroClass }) => {
       {heroClass.proficiencies && (
         <ProficienciesList proficiencies={heroClass.proficiencies} />
       )}
+      {heroClass.proficiency_choices &&
+        heroClass.proficiency_choices.map((option) => (
+          <ProficienciesList
+            proficiencies={option.from!}
+            chooseFrom={option.choose!}
+          />
+        ))}
       {heroClass.saving_throws && (
         <SavingThrowsList saving_throws={heroClass.saving_throws} />
       )}
@@ -41,5 +48,6 @@ const Details = styled.div`
     border-radius: 0.5rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     margin-bottom: 0.5rem;
+    min-width: 215px;
   }
 `;

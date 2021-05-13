@@ -28,7 +28,8 @@ module.exports = {
   rules: {
     "linebreak-style": "off", // doesn't work with styled-components
     "react/prop-types": "off", // doesn't work with typescript generics
-    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-use-before-define": "off", // doesn't work with styled-components
     "prettier/prettier": [
       "error",
       {

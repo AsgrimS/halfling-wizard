@@ -1,10 +1,19 @@
 import React from "react";
-import { ProficienciesData } from "../../graphql/interfaces";
+import { Proficiency } from "../../graphql/schema";
 
-const ProficienciesList: React.FC<ProficienciesData> = ({ proficiencies }) => {
+interface ProficienciesListProps {
+  proficiencies: Proficiency[];
+  chooseFrom?: number;
+}
+
+const ProficienciesList: React.FC<ProficienciesListProps> = ({
+  proficiencies,
+  chooseFrom,
+}) => {
   return (
     <div>
       <span>Proficiencies:</span>
+      {chooseFrom && <span> Choose from {chooseFrom}</span>}
       <ul>
         {proficiencies.map((proficiency) => (
           <li key={proficiency.index}>{proficiency.name}</li>

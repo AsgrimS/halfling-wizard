@@ -8,6 +8,8 @@ import { HeroClassesData } from "../../graphql/interfaces";
 import { LazyQueryCallbackFunction } from "../../utils/interfaces";
 import ExpandBtn from "../../styled-components/ExpandBtn";
 import LoadingAnimation from "../../styled-components/LoadingAnimation";
+import CleanUl from "../../styled-components/CleanUl";
+import Container from "../../styled-components/Container";
 
 const ClassesList: React.FC<LazyQueryCallbackFunction> = ({
   getClassDetail,
@@ -15,16 +17,15 @@ const ClassesList: React.FC<LazyQueryCallbackFunction> = ({
   const heroClassesData = useQuery<HeroClassesData>(HEROES_CLASSES);
 
   return (
-    <TableContainer>
-      <TableTitle>Classes</TableTitle>
-
+    <ClassesListContainer>
+      <ClassListTitle>Classes</ClassListTitle>
       {heroClassesData.loading ? (
-        <LoadingAnimation />
+        <StyledLoading pxSize={86} />
       ) : (
-        <ClassesTable>
+        <ClassesUl>
           {heroClassesData.data &&
             heroClassesData.data.classes.map((heroClass) => (
-              <tr>
+              <ClassLi key={heroClass.index}>
                 <ExpandBtn
                   type="button"
                   onClick={() =>
@@ -35,31 +36,41 @@ const ClassesList: React.FC<LazyQueryCallbackFunction> = ({
                 >
                   {heroClass.name}
                 </ExpandBtn>
-              </tr>
+              </ClassLi>
             ))}
-        </ClassesTable>
+        </ClassesUl>
       )}
-    </TableContainer>
+    </ClassesListContainer>
   );
 };
 
 export default ClassesList;
 
-const TableContainer = styled.div`
-  width: 100%;
-  grid-column-start: 1;
-  grid-column-end: 1;
-  background-color: var(--blackOliveL);
-  border-radius: 0.5rem;
-  align-self: start;
+const ClassesListContainer = styled(Container)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 20ch;
 `;
 
-const TableTitle = styled.span`
-  font-family: "PT Sans Bold";
-  font-size: 1.5rem;
-  margin-left: 0.5rem;
+const ClassListTitle = styled.span`
+  font-family: "PT Sans Bold", sans-serif;
+  font-size: 2rem;
+  position: absolute;
+  margin-top: 3rem;
 `;
 
-const ClassesTable = styled.table`
-  width: 100%;
+const ClassesUl = styled(CleanUl)`
+  margin-top: auto;
+  margin-bottom: auto;
+`;
+
+const ClassLi = styled.li`
+  margin-bottom: 1px;
+  min-width: 20ch;
+`;
+
+const StyledLoading = styled(LoadingAnimation)`
+  margin-top: auto;
+  margin-bottom: auto;
 `;

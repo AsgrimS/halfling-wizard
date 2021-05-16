@@ -9,7 +9,7 @@ const rotate360 = keyframes`
   }
 `;
 
-const LoadingAnimation = styled.div`
+const LoadingAnimation = styled.div<{ pxSize: number }>`
   animation: ${rotate360} 1s linear infinite;
   transform: translateZ(0);
 
@@ -18,8 +18,8 @@ const LoadingAnimation = styled.div`
   border-bottom: 2px solid grey;
   border-left: 4px solid black;
   background: transparent;
-  width: 24px;
-  height: 24px;
+  width: ${(props) => props.pxSize}px;
+  height: ${(props) => props.pxSize}px;
   border-radius: 50%;
 
   align-self: center;

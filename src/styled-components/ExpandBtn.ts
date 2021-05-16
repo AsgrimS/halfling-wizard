@@ -7,13 +7,8 @@ const ExpandBtn = styled.button`
   transition-property: background-color, padding, border-radius, content;
   transition-duration: 0.3s;
   width: 100%;
-
-  &:hover {
-    background-color: var(--floralWhite);
-    border-bottom-right-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    padding-right: 1rem;
-    cursor: pointer;
+  &:active {
+    filter: brightness(90%);
   }
 `;
 

@@ -34,6 +34,10 @@ const GlobalStyle = createGlobalStyle`
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
   }
+  
+  html {
+    scroll-behavior: smooth;
+  }
 
   body {
     margin: 0;

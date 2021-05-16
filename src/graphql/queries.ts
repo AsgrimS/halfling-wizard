@@ -28,6 +28,13 @@ export const HERO_CLASS = gql`
           name
         }
       }
+      starting_equipment {
+        equipment {
+          name
+          index
+        }
+        quantity
+      }
       starting_equipment_options {
         choose
         from {

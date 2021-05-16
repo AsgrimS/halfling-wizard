@@ -128,9 +128,9 @@ export type Class = {
   saving_throws?: Maybe<Array<AbilityScoreSkills>>;
   spellcasting?: Maybe<ClassSpellcasting>;
   spells?: Maybe<Scalars["String"]>;
-  starting_equipment?: Maybe<Array<Maybe<ClassStarting_Equipment>>>;
+  starting_equipment?: Maybe<Array<ClassStarting_Equipment>>;
   starting_equipment_options?: Maybe<
-    Array<Maybe<ClassStarting_Equipment_Options>>
+    Array<ClassStarting_Equipment_Options>
   >;
   subclasses?: Maybe<Array<Subclass>>;
   url?: Maybe<Scalars["String"]>;
@@ -158,7 +158,7 @@ export type ClassSpellcastingInfo = {
 
 export type ClassStarting_Equipment = {
   __typename?: "ClassStarting_equipment";
-  equipment?: Maybe<AbilityScoreSkills>;
+  equipment?: Maybe<Equipment>;
   quantity?: Maybe<Scalars["Float"]>;
 };
 
@@ -3678,7 +3678,7 @@ export type SpellDc = {
 export type StartingEquipment = {
   __typename?: "StartingEquipment";
   _id: Scalars["String"];
-  class?: Maybe<AbilityScoreSkills>;
+  class?: Maybe<Class>;
   index?: Maybe<Scalars["String"]>;
   starting_equipment?: Maybe<Array<Maybe<StartingEquipmentStarting_Equipment>>>;
   starting_equipment_options?: Maybe<

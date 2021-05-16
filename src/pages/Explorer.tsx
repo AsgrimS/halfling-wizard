@@ -1,6 +1,5 @@
 import React from "react";
 
-import styled from "styled-components";
 import { useLazyQuery } from "@apollo/client";
 
 import { HERO_CLASS } from "../graphql/queries";
@@ -14,7 +13,7 @@ const Explorer: React.FC = () => {
     HERO_CLASS
   );
   return (
-    <Layout>
+    <>
       <ClassesList getClassDetail={getClassDetail} />
       {heroClassData.called && heroClassData.loading === true && (
         <LoadingAnimation pxSize={24} />
@@ -22,13 +21,8 @@ const Explorer: React.FC = () => {
       {heroClassData.loading === false && heroClassData.data && (
         <ClassDetails class={heroClassData.data.class} />
       )}
-    </Layout>
+    </>
   );
 };
 
 export default Explorer;
-
-const Layout = styled.div`
-  padding-right: 1rem;
-  padding-left: 1rem;
-`;

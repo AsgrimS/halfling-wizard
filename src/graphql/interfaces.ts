@@ -4,6 +4,7 @@ import {
   Proficiency,
   AbilityScoreSkills,
   ClassSpellcasting,
+  ClassStarting_Equipment,
 } from "./schema";
 
 export interface HeroClassesData {
@@ -28,4 +29,8 @@ export interface SavingThrowsData {
 
 export interface ClassSpellcastingData {
   spellcasting: ClassSpellcasting;
+}
+
+export interface StartingEquipmentData {
+  startingEquipments: ClassStarting_Equipment[];
 }

@@ -13,7 +13,7 @@ import Container from "./styled-components/Container";
 const ClassDetails: React.FC<HeroClassData> = ({ class: heroClass }) => {
   useEffect(() => {
     document.getElementById("class-details")?.scrollIntoView();
-  }, [heroClass.name]);
+  }, [heroClass.index]);
 
   return (
     <Details id="class-details">

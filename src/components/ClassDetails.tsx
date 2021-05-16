@@ -56,6 +56,7 @@ const Details = styled(Container)`
 
   & > div:not(:last-of-type) {
     background-color: var(--eerieBlack);
+    opacity: 0.9;
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
     min-width: 20ch;

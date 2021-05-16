@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 
-import { HeroClassData } from "../../graphql/interfaces";
-import SubclassesList from "../subclassesList/SubclassesList";
-import ProficienciesList from "../proficienciesList/ProficienciesList";
-import SavingThrowsList from "../savingThrowsList/SavingThrowsList";
-import Spellcasting from "../spellcasting/Spellcasting";
-import Container from "../../styled-components/Container";
+import { HeroClassData } from "../graphql/interfaces";
+import SubclassesList from "./SubclassesList";
+import ProficienciesList from "./ProficienciesList";
+import SavingThrowsList from "./SavingThrowsList";
+import Spellcasting from "./Spellcasting";
+import Container from "./styled-components/Container";
 
 const ClassDetails: React.FC<HeroClassData> = ({ class: heroClass }) => {
+  useEffect(() => {
+    document.getElementById("class-details")?.scrollIntoView();
+  }, []);
   return (
     <Details id="class-details">
       <div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { SubclassesData } from "../../graphql/interfaces";
+import { SubclassesData } from "../graphql/interfaces";
 
 const SubclassesList: React.FC<SubclassesData> = ({ subclasses }) => {
   return (

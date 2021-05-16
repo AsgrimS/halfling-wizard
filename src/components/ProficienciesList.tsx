@@ -1,5 +1,5 @@
 import React from "react";
-import { Proficiency } from "../../graphql/schema";
+import { Proficiency } from "../graphql/schema";
 
 interface ProficienciesListProps {
   proficiencies: Proficiency[];

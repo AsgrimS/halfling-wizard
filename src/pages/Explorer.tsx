@@ -3,11 +3,11 @@ import React from "react";
 import styled from "styled-components";
 import { useLazyQuery } from "@apollo/client";
 
-import { HERO_CLASS } from "../../graphql/queries";
-import { HeroClassData } from "../../graphql/interfaces";
-import ClassesList from "../../components/classesList/ClassesList";
-import ClassDetails from "../../components/classDetails/ClassDetails";
-import LoadingAnimation from "../../styled-components/LoadingAnimation";
+import { HERO_CLASS } from "../graphql/queries";
+import { HeroClassData } from "../graphql/interfaces";
+import ClassesList from "../components/ClassesList";
+import ClassDetails from "../components/ClassDetails";
+import LoadingAnimation from "../components/styled-components/LoadingAnimation";
 
 const Explorer: React.FC = () => {
   const [getClassDetail, heroClassData] = useLazyQuery<HeroClassData>(

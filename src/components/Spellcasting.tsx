@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ClassSpellcastingData } from "../../graphql/interfaces";
+import { ClassSpellcastingData } from "../graphql/interfaces";
 
 const Spellcasting: React.FC<ClassSpellcastingData> = ({ spellcasting }) => {
   return (

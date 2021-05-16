@@ -1,7 +1,7 @@
 import React from "react";
 
 import GlobalStyle from "./globalStyles";
-import Explorer from "./pages/explorer/Explorer";
+import Explorer from "./pages/Explorer";
 
 const App: React.FC = () => {
   return (

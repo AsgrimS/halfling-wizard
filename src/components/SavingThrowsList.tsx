@@ -1,5 +1,5 @@
 import React from "react";
-import { SavingThrowsData } from "../../graphql/interfaces";
+import { SavingThrowsData } from "../graphql/interfaces";
 
 const SavingThrowsList: React.FC<SavingThrowsData> = ({ saving_throws }) => {
   return (

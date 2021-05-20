@@ -32,14 +32,14 @@ const ClassDetails: React.FC<HeroClassData> = ({ class: heroClass }) => {
       {heroClass.spellcasting && (
         <Spellcasting spellcasting={heroClass.spellcasting} />
       )}
+      {heroClass.starting_equipment && (
+        <StartingEquipment startingEquipments={heroClass.starting_equipment} />
+      )}
       {heroClass.proficiencies && heroClass.proficiency_choices && (
         <ProficienciesList
           proficiencies={heroClass.proficiencies}
           proficienciesChoices={heroClass.proficiency_choices}
         />
-      )}
-      {heroClass.starting_equipment && (
-        <StartingEquipment startingEquipments={heroClass.starting_equipment} />
       )}
       <PushDown />
     </Details>
@@ -60,6 +60,15 @@ const Details = styled(Container)`
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
     min-width: 20ch;
+    padding: 0.5rem;
+  }
+
+  @media (min-width: 30rem) {
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 0 0.5rem;
+    padding-left: max(1rem, calc(50% - 60ch));
+    padding-right: max(1rem, calc(50% - 60ch));
   }
 `;
 
@@ -70,5 +79,9 @@ const PushDown = styled.div`
     display: block;
     height: 2.5vh;
     width: 100%;
+  }
+
+  @media (min-width: 30rem) {
+    display: none;
   }
 `;

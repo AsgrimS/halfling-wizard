@@ -10,6 +10,10 @@ const ExpandBtn = styled.button`
   &:active {
     filter: brightness(90%);
   }
+  &:hover,
+  &:focus {
+    padding-left: 0.8rem;
+  }
 `;
 
 export default ExpandBtn;

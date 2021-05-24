@@ -129,9 +129,7 @@ export type Class = {
   spellcasting?: Maybe<ClassSpellcasting>;
   spells?: Maybe<Scalars["String"]>;
   starting_equipment?: Maybe<Array<ClassStarting_Equipment>>;
-  starting_equipment_options?: Maybe<
-    Array<ClassStarting_Equipment_Options>
-  >;
+  starting_equipment_options?: Maybe<Array<ClassStarting_Equipment_Options>>;
   subclasses?: Maybe<Array<Subclass>>;
   url?: Maybe<Scalars["String"]>;
 };
@@ -3708,7 +3706,7 @@ export type StartingEquipmentStarting_Equipment_OptionsFrom = {
 
 export type Subclass = {
   __typename?: "Subclass";
-  _id: Scalars["String"];
+  _id?: Scalars["String"];
   class?: Maybe<AbilityScoreSkills>;
   desc?: Maybe<Array<Maybe<Scalars["String"]>>>;
   index?: Maybe<Scalars["String"]>;

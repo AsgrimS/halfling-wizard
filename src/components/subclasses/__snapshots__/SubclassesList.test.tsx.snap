@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubclassesList component should render a list of subclasses 1`] = `
+<div
+  data-testid="subclasses-list"
+>
+  <span>
+    Subclasses:
+  </span>
+  <ul>
+    <li>
+      Warrior
+    </li>
+    <li>
+      Wizard
+    </li>
+  </ul>
+</div>
+`;

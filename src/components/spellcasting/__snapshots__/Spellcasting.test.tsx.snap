@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spellcasting component should render a name of spellcasting ability 1`] = `
+<div
+  data-testid="spellcasting"
+>
+  <span>
+    Spellcasting Ability:
+  </span>
+  <ul>
+    <li>
+      INT
+    </li>
+  </ul>
+</div>
+`;

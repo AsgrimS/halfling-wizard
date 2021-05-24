@@ -3,10 +3,10 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import { HeroClassData } from "../graphql/interfaces";
-import SubclassesList from "./SubclassesList";
+import SubclassesList from "./subclasses/SubclassesList";
 import ProficienciesList from "./ProficienciesList";
 import SavingThrowsList from "./SavingThrowsList";
-import Spellcasting from "./Spellcasting";
+import Spellcasting from "./spellcasting/Spellcasting";
 import StartingEquipment from "./StartingEquipment";
 import Container from "./styled-components/Container";
 

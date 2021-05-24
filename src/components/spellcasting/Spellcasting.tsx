@@ -1,10 +1,10 @@
 import React from "react";
 
-import { ClassSpellcastingData } from "../graphql/interfaces";
+import { ClassSpellcastingData } from "../../graphql/interfaces";
 
 const Spellcasting: React.FC<ClassSpellcastingData> = ({ spellcasting }) => {
   return (
-    <div>
+    <div data-testid="spellcasting">
       <span>Spellcasting Ability:</span>
       <ul>
         <li>{spellcasting.spellcasting_ability?.name}</li>

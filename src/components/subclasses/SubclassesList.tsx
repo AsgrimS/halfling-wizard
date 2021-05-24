@@ -1,9 +1,9 @@
 import React from "react";
-import { SubclassesData } from "../graphql/interfaces";
+import { SubclassesData } from "../../graphql/interfaces";
 
 const SubclassesList: React.FC<SubclassesData> = ({ subclasses }) => {
   return (
-    <div>
+    <div data-testid="subclasses-list">
       <span>Subclasses:</span>
       <ul>
         {subclasses.map((subclass) => (

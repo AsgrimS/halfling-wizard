@@ -11,15 +11,15 @@ describe("SubclassesList component", () => {
 
   it("should render a list of subclasses", () => {
     const mockSubclassesListData: Subclass[] = [
-      { name: "Warrior", index: "warrior" },
-      { name: "Wizard", index: "wizard" },
+      { name: "Dark Warrior", index: "dark_warrior" },
+      { name: "Magic Wizard", index: "magic_wizard" },
     ];
 
     render(<SubclassesList subclasses={mockSubclassesListData} />);
-    const SublcasessListElement = screen.getByTestId("subclasses-list");
-    const liElements = SublcasessListElement.getElementsByTagName("li");
+    const sublcasessListElement = screen.getByTestId("subclasses-list");
+    const liElements = sublcasessListElement.getElementsByTagName("li");
 
-    expect(SublcasessListElement).toBeInTheDocument();
+    expect(sublcasessListElement).toBeInTheDocument();
     expect(liElements.length).toEqual(2);
 
     for (let i = 0; i < liElements.length; i += 1) {
@@ -28,6 +28,6 @@ describe("SubclassesList component", () => {
       );
     }
 
-    expect(SublcasessListElement).toMatchSnapshot();
+    expect(sublcasessListElement).toMatchSnapshot();
   });
 });

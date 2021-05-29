@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProficienciesChoicesList component should render a list of proficiencies choices 1`] = `
+<div
+  data-testid="proficiencies-choices-list"
+>
+  <span>
+    Proficiencies Choices:
+  </span>
+  <br />
+  <span>
+    Choose 
+    1
+  </span>
+  <ul>
+    <li>
+      Flying
+    </li>
+    <li>
+      Invisibility
+    </li>
+  </ul>
+  <span>
+    Choose 
+    2
+  </span>
+  <ul>
+    <li>
+      Reading minds
+    </li>
+    <li>
+      Super strength
+    </li>
+    <li>
+      Dexterity like Batman
+    </li>
+  </ul>
+</div>
+`;

@@ -9,10 +9,10 @@ exports[`SubclassesList component should render a list of subclasses 1`] = `
   </span>
   <ul>
     <li>
-      Warrior
+      Dark Warrior
     </li>
     <li>
-      Wizard
+      Magic Wizard
     </li>
   </ul>
 </div>

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProficienciesList component should render a list of proficiencies 1`] = `
+<div
+  data-testid="proficiencies-list"
+>
+  <span>
+    Proficiencies:
+  </span>
+  <ul>
+    <li>
+      Pancaking skills
+    </li>
+    <li>
+      Physics
+    </li>
+  </ul>
+</div>
+`;

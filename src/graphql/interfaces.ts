@@ -2,6 +2,7 @@ import {
   Class,
   Subclass,
   Proficiency,
+  ClassProficiency_Choices,
   AbilityScoreSkills,
   ClassSpellcasting,
   ClassStarting_Equipment,
@@ -23,6 +24,9 @@ export interface ProficienciesData {
   proficiencies: Proficiency[];
 }
 
+export interface ProficienciesChoicesData {
+  proficienciesChoices: ClassProficiency_Choices[];
+}
 export interface SavingThrowsData {
   saving_throws: AbilityScoreSkills[];
 }

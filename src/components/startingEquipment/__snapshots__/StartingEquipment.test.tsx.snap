@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StartingEquipment component should render a list of starting equipment items 1`] = `
+<div
+  data-testid="starting-equipment"
+>
+  <span>
+    Starting Equipment
+  </span>
+  <ul>
+    <li>
+      Big Sword
+      : 
+      4
+    </li>
+    <li>
+      Leather Armor
+      : 
+      1
+    </li>
+  </ul>
+</div>
+`;

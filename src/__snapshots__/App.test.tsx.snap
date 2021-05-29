@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Core should render an App core component 1`] = `
+<div
+  data-testid="app"
+>
+  <div
+    data-testid="mock-explorer"
+  />
+</div>
+`;

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SavingThrowsList component should render a list of saving throws 1`] = `
+<div
+  data-testid="saving-throws-list"
+>
+  <span>
+    Saving Throws:
+  </span>
+  <ul>
+    <li>
+      INT
+    </li>
+    <li>
+      DEX
+    </li>
+    <li>
+      CHA
+    </li>
+  </ul>
+</div>
+`;

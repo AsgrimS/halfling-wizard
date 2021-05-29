@@ -1,13 +1,13 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import { StartingEquipmentData } from "../graphql/interfaces";
+import { StartingEquipmentData } from "../../graphql/interfaces";
 
 const StartingEquipment: React.FC<StartingEquipmentData> = ({
   startingEquipments,
 }) => {
   return (
-    <div>
+    <div data-testid="starting-equipment">
       <span>Starting Equipment</span>
       <ul>
         {startingEquipments.map(({ equipment, quantity }) => (

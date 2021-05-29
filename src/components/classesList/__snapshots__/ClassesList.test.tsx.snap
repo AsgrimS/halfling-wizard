@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClassesList component should render a list of buttons containing avaible classes 1`] = `
+<section
+  class="sc-hKFxyN sc-eCApnc jJwpmv dvmDAx"
+  data-testid="classes-list"
+>
+  <span
+    class="sc-jSFjdj fWvYUO"
+  >
+    Classes
+  </span>
+  <ul
+    class="sc-dlnjwi sc-gKAaRy jnsiJj idWzYF"
+  >
+    <li
+      class="sc-iCoGMd cUbQsk"
+    >
+      <button
+        class="sc-bdnxRM fFtxCn"
+        type="button"
+      >
+        Wizard
+      </button>
+    </li>
+    <li
+      class="sc-iCoGMd cUbQsk"
+    >
+      <button
+        class="sc-bdnxRM fFtxCn"
+        type="button"
+      >
+        Barbarian
+      </button>
+    </li>
+  </ul>
+</section>
+`;

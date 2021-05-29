@@ -118,7 +118,7 @@ export type BackgroundStarting_Equipment_OptionsFrom = {
 
 export type Class = {
   __typename?: "Class";
-  _id: Scalars["String"];
+  _id?: Scalars["String"];
   class_levels?: Maybe<Scalars["String"]>;
   hit_die?: Maybe<Scalars["Float"]>;
   index?: Maybe<Scalars["String"]>;
@@ -193,7 +193,7 @@ export type DamageType = {
 
 export type Equipment = {
   __typename?: "Equipment";
-  _id: Scalars["String"];
+  _id?: Scalars["String"];
   armor_category?: Maybe<Scalars["String"]>;
   armor_class?: Maybe<EquipmentArmor_Class>;
   capacity?: Maybe<Scalars["String"]>;
@@ -2923,7 +2923,7 @@ export type MonsterSpeed = {
 
 export type Proficiency = {
   __typename?: "Proficiency";
-  _id: Scalars["String"];
+  _id?: Scalars["String"];
   classes?: Maybe<Array<Maybe<AbilityScoreSkills>>>;
   index?: Maybe<Scalars["String"]>;
   name?: Maybe<Scalars["String"]>;

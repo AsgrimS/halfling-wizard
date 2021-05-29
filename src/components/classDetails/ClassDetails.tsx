@@ -2,13 +2,14 @@ import React, { useEffect } from "react";
 
 import styled from "styled-components";
 
-import { HeroClassData } from "../graphql/interfaces";
-import SubclassesList from "./subclasses/SubclassesList";
-import ProficienciesList from "./ProficienciesList";
-import SavingThrowsList from "./SavingThrowsList";
-import Spellcasting from "./spellcasting/Spellcasting";
-import StartingEquipment from "./StartingEquipment";
-import Container from "./styled-components/Container";
+import { HeroClassData } from "../../graphql/interfaces";
+import SubclassesList from "../subclassesList/SubclassesList";
+import ProficienciesList from "../proficienciesList/ProficienciesList";
+import ProficienciesChoicesList from "../proficienciesChoicesList/ProficienciesChoicesList";
+import SavingThrowsList from "../savingThrowsList/SavingThrowsList";
+import Spellcasting from "../spellcasting/Spellcasting";
+import StartingEquipment from "../startingEquipment/StartingEquipment";
+import Container from "../styled-components/Container";
 
 const ClassDetails: React.FC<HeroClassData> = ({ class: heroClass }) => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const ClassDetails: React.FC<HeroClassData> = ({ class: heroClass }) => {
   }, [heroClass.index]);
 
   return (
-    <Details id="class-details">
+    <Details id="class-details" data-testid="class-details">
       <div>
         <span>{heroClass.name}</span>
       </div>
@@ -35,9 +36,11 @@ const ClassDetails: React.FC<HeroClassData> = ({ class: heroClass }) => {
       {heroClass.starting_equipment && (
         <StartingEquipment startingEquipments={heroClass.starting_equipment} />
       )}
-      {heroClass.proficiencies && heroClass.proficiency_choices && (
-        <ProficienciesList
-          proficiencies={heroClass.proficiencies}
+      {heroClass.proficiencies && (
+        <ProficienciesList proficiencies={heroClass.proficiencies} />
+      )}
+      {heroClass.proficiency_choices && (
+        <ProficienciesChoicesList
           proficienciesChoices={heroClass.proficiency_choices}
         />
       )}

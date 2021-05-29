@@ -3,21 +3,20 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import styled from "styled-components";
 
-import { HEROES_CLASSES } from "../graphql/queries";
-import { HeroClassesData } from "../graphql/interfaces";
-import { LazyQueryCallbackFunction } from "../utils/interfaces";
-import ExpandBtn from "./styled-components/ExpandBtn";
-import LoadingAnimation from "./styled-components/LoadingAnimation";
-import CleanUl from "./styled-components/CleanUl";
-import Container from "./styled-components/Container";
+import { HEROES_CLASSES } from "../../graphql/queries";
+import { HeroClassesData } from "../../graphql/interfaces";
+import { LazyQueryCallbackFunction } from "../../utils/interfaces";
+import ExpandBtn from "../styled-components/ExpandBtn";
+import LoadingAnimation from "../styled-components/LoadingAnimation";
+import CleanUl from "../styled-components/CleanUl";
+import Container from "../styled-components/Container";
 
 const ClassesList: React.FC<LazyQueryCallbackFunction> = ({
   getClassDetail,
 }) => {
   const heroClassesData = useQuery<HeroClassesData>(HEROES_CLASSES);
-
   return (
-    <ClassesListContainer>
+    <ClassesListContainer data-testid="classes-list">
       <ClassListTitle>Classes</ClassListTitle>
       {heroClassesData.loading ? (
         <StyledLoading pxSize={86} />

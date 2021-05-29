@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Explorer Page should render a page that renders classes list 1`] = `
+<section
+  data-testid="explorer"
+>
+  <div
+    data-testid="mock-classes-list"
+  >
+    <button
+      data-testid="mock-btn"
+      type="button"
+    >
+      test
+    </button>
+  </div>
+</section>
+`;
+
+exports[`Explorer Page should render a page that renders classes list and class details components 1`] = `
+<section
+  data-testid="explorer"
+>
+  <div
+    data-testid="mock-classes-list"
+  >
+    <button
+      data-testid="mock-btn"
+      type="button"
+    >
+      test
+    </button>
+  </div>
+  <div
+    data-testid="mock-class-details"
+  />
+</section>
+`;

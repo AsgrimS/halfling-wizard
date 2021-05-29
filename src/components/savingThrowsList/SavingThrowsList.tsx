@@ -1,9 +1,9 @@
 import React from "react";
-import { SavingThrowsData } from "../graphql/interfaces";
+import { SavingThrowsData } from "../../graphql/interfaces";
 
 const SavingThrowsList: React.FC<SavingThrowsData> = ({ saving_throws }) => {
   return (
-    <div>
+    <div data-testid="saving-throws-list">
       <span>Saving Throws:</span>
       <ul>
         {saving_throws.map((saving_throw) => (

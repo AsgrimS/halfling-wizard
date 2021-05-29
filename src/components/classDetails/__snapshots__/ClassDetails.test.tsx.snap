@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClassDetails component should render a component that displays details for class 1`] = `
+<section
+  class="sc-bdnxRM sc-gtsrHT bgsJOG hGOABx"
+  data-testid="class-details"
+  id="class-details"
+>
+  <div>
+    <span>
+      Wizard
+    </span>
+  </div>
+  <div>
+    <span>
+      Hit die 
+      6
+    </span>
+  </div>
+  <div
+    data-testid="mock-subclasses-list"
+  />
+  <div
+    data-testid="mock-saving-throws"
+  />
+  <div
+    data-testid="mock-spellcasting"
+  />
+  <div
+    data-testid="mock-starting-equipment"
+  />
+  <div
+    data-testid="mock-proficiencies-list"
+  />
+  <div
+    data-testid="mock-proficiencies-choices-list"
+  />
+  <div
+    class="sc-dlnjwi cWeluP"
+  />
+</section>
+`;

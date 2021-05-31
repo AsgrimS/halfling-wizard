@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
-    font-family: "PT Sans";
+    font-family: "PT Sans", sans-serif;
     color: var(--fontColor);
   }
 

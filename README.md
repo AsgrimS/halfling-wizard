@@ -1,6 +1,21 @@
 # Halfling Wizard App
 
-Compact app for browsing D&D 5e related stuff
+Compact app for browsing D&D 5e related stuff using free API: https://www.dnd5eapi.co/graphql
+
+## Used technologies and additional info.
+
+- React
+- Typescript
+- GraphQL + Appolo Client
+- Styled Components
+- Yarn
+- React Testing Library
+- PWA Enabled
+- Airbnb eslint and prettier configuration
+- Automated tests on PRs and pushes via. Github Actions
+- Responsive Design
+
+**P.S.** *The main purpose of this project is to me to train using those technologies so the content may be "small" :P*
 
 ## Available Scripts
 
@@ -48,3 +63,4 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+

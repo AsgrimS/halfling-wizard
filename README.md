@@ -1,6 +1,6 @@
 # Halfling Wizard App
 
-Compact app for browsing D&D 5e related stuff using free API: https://www.dnd5eapi.co/
+Compact app for browsing D&D 5e related stuff using free API: https://www.dnd5eapi.co
 
 ## Used technologies and additional info.
 
